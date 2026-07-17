@@ -516,55 +516,47 @@ footer .small {
     .gallery-grid, .why-grid { grid-template-columns: 1fr; }
 }
 
-/* --- COMPOSANT SLIDER DE FILANT --- */
+/* --- COMPOSANT SLIDER DEFILANT (CORRIGÉ) --- */
 .category-title {
     font-size: 1.5rem;
     color: var(--primary-color);
     margin: 30px 0 15px 0;
-    border-left: 4px solid var(--secondary-color); /* Ligne décorative bleu électrique */
+    border-left: 4px solid var(--secondary-color);
     padding-left: 10px;
+    clear: both; /* Évite les chevauchements */
 }
 
 .slider-container {
-    width: 100%;
-    overflow-x: auto; /* Permet le défilement horizontal si ça dépasse */
+    width: 100% !important;
+    display: block !important;
+    overflow-x: auto !important; /* Force le défilement horizontal */
+    overflow-y: hidden !important;
     scroll-behavior: smooth;
     padding-bottom: 15px;
-    scrollbar-width: thin; /* Barre de défilement discrète */
-}
-
-/* Style de la barre de défilement pour Chrome/Safari */
-.slider-container::-webkit-scrollbar {
-    height: 6px;
-}
-.slider-container::-webkit-scrollbar-thumb {
-    background-color: var(--secondary-color); /* Barre bleu électrique */
-    border-radius: 10px;
+    margin-bottom: 30px;
 }
 
 .slider-track {
-    display: flex; /* Aligne les images sur une seule ligne horizontale */
-    gap: 20px; /* Espace entre les projets */
+    display: flex !important; /* FORCE l'alignement en ligne droite (horizontal) */
+    flex-direction: row !important;
+    gap: 20px;
+    width: max-content; /* Force la ligne à s'étirer plutôt qu'à aller à la ligne */
 }
 
 .slider-item {
-    flex: 0 0 300px; /* Fixe la largeur de chaque carte d'image à 300px */
+    width: 300px !important;
+    flex: 0 0 300px !important; /* Interdit strict de se déformer ou d'aller en dessous */
     background: var(--white);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: var(--transition);
-}
-
-.slider-item:hover {
-    transform: translateY(-5px);
 }
 
 .slider-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover; /* Recadre proprement les images pour qu'elles aient la même taille */
-    display: block;
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important; /* Image parfaitement proportionnée */
+    display: block !important;
 }
 
 .slider-desc {
