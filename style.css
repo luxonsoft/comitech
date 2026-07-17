@@ -6,13 +6,14 @@
 }
 
 :root {
-    --primary-color: #0B3C5D;
-    --secondary-color: #F5A623;
+    --primary-color: #0B3C5D;   /* Bleu foncé pro pour les fonds et grands titres */
+    --secondary-color: #0044FF; /* Le fameux BLEU ÉLECTRIQUE pour booster le design ! */
     --dark-color: #1D2731;
     --light-color: #F9F9F9;
     --white: #FFFFFF;
     --grey: #777777;
     --transition: all 0.3s ease;
+}
 }
 
 html {
